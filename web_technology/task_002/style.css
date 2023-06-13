@@ -1,0 +1,22 @@
+p,
+ul {
+    color: darkred;
+}
+
+teg1 {
+    background-color: chocolate;
+}
+
+body {
+    background-color: burlywood;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    text-shadow: 3px 3px 1px green;
+}
+
+h2 {
+    color: blue;
+}

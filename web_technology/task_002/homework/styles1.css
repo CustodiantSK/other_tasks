@@ -1,0 +1,38 @@
+p,
+body {
+    background-color: burlywood;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    background-color: rgb(248, 188, 188);
+    color: rgb(202, 0, 0);
+}
+
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 0, 0);
+}
+
+h3 {
+    font-size: xx-large;
+    color: rgb(57, 30, 210);
+}
+
+li {
+    font-size: large;
+    color: darkgreen;
+}
+
+b {
+    font-size: xx-large;
+    color: green;
+    margin-top: auto;
+}
+
+.table_center_by_css {
+    width: 1000px;
+    border: 1px solid #000;
+    margin: auto;
+}
