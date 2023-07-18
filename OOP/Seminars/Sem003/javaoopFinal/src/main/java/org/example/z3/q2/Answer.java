@@ -40,10 +40,9 @@ public class Answer {
 
     @Override
     public String toString() {
-        return "Answer{" +
-                "bull=" + bull +
-                ", cow=" + cow +
-                ", numTry=" + numTry +
-                '}';
+        return "Ответ: " +
+                "быков => " + bull +
+                ", коров => " + cow +
+                ", попытка №" + numTry;
     }
 }

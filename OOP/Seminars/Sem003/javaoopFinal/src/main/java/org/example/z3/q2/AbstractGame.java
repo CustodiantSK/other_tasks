@@ -16,32 +16,47 @@ public abstract class AbstractGame implements Game {
         this.sizeWord = sizeWord;
         this.maxTry = maxTry;
         computerWord = generateWord();
-        System.out.println("comp:  " + computerWord);
+        System.out.println("------ \n Компьютер загадал:  " + computerWord);
         this.gameStatus = GameStatus.START;
         this.currentTry = 0;
     }
 
     @Override
     public Answer inputValue(String value) {
-        if (currentTry > maxTry) {
+        if (value.length() == 0) {
+            return null;
+        }
+        if (currentTry >= maxTry) {
             gameStatus = GameStatus.FINISH;
-            System.out.println("вы проиграли по количеству попыток");
+            System.out.println("Вы проиграли по количеству попыток");
+
             return null;
         }
         int bull = 0;
         int cow = 0;
-        for (int i = 0; i < value.length(); i++) {
-            if (value.charAt(i) == computerWord.charAt(i)) {
-                bull++;
-                cow++;
-            } else if (computerWord.contains(String.valueOf(value.charAt(i)))) {
-                cow++;
+        if (value.length() == computerWord.length()) {
+            for (int i = 0; i < value.length(); i++) {
+
+                if (value.charAt(i) == computerWord.charAt(i)) {
+                    bull++;
+                    cow++;
+                } else if (computerWord.contains(String.valueOf(value.charAt(i)))) {
+                    cow++;
+                }
             }
+            currentTry++;
+
+        } else if (value.length() < computerWord.length()) {
+            System.out.println("-->> Длина вашего слова меньше загаданого \n ---");
+        } else if (value.length() > computerWord.length()) {
+            System.out.println("-->> Длина вашего слова длиннее загаданого \n ---");
         }
-        currentTry++;
+
         if (sizeWord.equals(bull)) {
             gameStatus = GameStatus.FINISH;
-            System.out.println("вы Победили!!");
+
+            System.out.println(new Answer(bull, cow, currentTry));
+            System.out.println(" -- >>> ВЫ Победили!!! \n");
             return null;
         }
         return new Answer(bull, cow, currentTry);
