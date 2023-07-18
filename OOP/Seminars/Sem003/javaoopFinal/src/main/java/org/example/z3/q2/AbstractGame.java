@@ -2,7 +2,7 @@
 package Seminars.Sem003.javaoopFinal.src.main.java.org.example.z3.q2;
 
 import java.util.List;
-import java.util.Random;
+/* import java.util.Random; */
 
 public abstract class AbstractGame implements Game {
     Integer sizeWord;
@@ -12,11 +12,18 @@ public abstract class AbstractGame implements Game {
     GameStatus gameStatus = GameStatus.INIT;
 
     @Override
-    public void start(Integer sizeWord, Integer maxTry) {
-        this.sizeWord = sizeWord;
+    public void start(/* Integer sizeWord, */ Integer maxTry) {
+        /* this.sizeWord = sizeWord; */
         this.maxTry = maxTry;
-        computerWord = generateWord();
+
+        /**
+         * Для проверки на работоспосомнойсть любого слова, заменить значение "Привет"
+         * на то что хотим проверить.
+         */
+        computerWord = "Привет" /* "HELLO" *//* generateWord() */;
+
         System.out.println("------ \n Компьютер загадал:  " + computerWord);
+        sizeWord = computerWord.length();
         this.gameStatus = GameStatus.START;
         this.currentTry = 0;
     }
@@ -69,15 +76,16 @@ public abstract class AbstractGame implements Game {
 
     abstract List<String> generateCharList();
 
-    private String generateWord() {
-        List<String> charList = generateCharList();
-        String result = "";
-        Random random = new Random();
-        for (int i = 0; i < sizeWord; i++) {
-            int randomIndex = random.nextInt(charList.size());
-            result += charList.get(randomIndex);
-            charList.remove(randomIndex);
-        }
-        return result;
-    }
+    // private String generateWord() {
+    // List<String> charList = generateCharList();
+    // String result = "";
+    // Random random = new Random();
+
+    // for (int i = 0; i < sizeWord; i++) {
+    // int randomIndex = random.nextInt(charList.size());
+    // result += charList.get(randomIndex);
+    // charList.remove(randomIndex);
+    // }
+    // return result;
+    // }
 }

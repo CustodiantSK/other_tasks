@@ -3,7 +3,7 @@ package Seminars.Sem003.javaoopFinal.src.main.java.org.example.z3.q2;
 public class Answer {
     Integer bull;
     Integer cow;
-    static int numTry;
+    int numTry;
 
     public Answer(Integer bull, Integer cow, int numTry) {
         this.bull = bull;

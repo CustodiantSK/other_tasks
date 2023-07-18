@@ -34,17 +34,19 @@ public class Main {
                 Date startData = new Date(System.currentTimeMillis());
                 System.out.print(
                         "\n" +
-                                "Игра началась! \n" +
-                                "Введите количество символов: ");
-                int length = scanner.nextInt();
-                /**
-                 * Проверка на ввод неотрицательных значений количества символов
-                 */
-                while (length <= 0) {
-                    System.out.print("---> Количество символов не может быть меньше 1!\n" +
-                            "Введите количество символов: ");
-                    length = scanner.nextInt();
-                }
+                                "Игра началась! \n"/*
+                                                    * +
+                                                    * "Введите количество символов: "
+                                                    */);
+                // int length = scanner.nextInt();
+                // /**
+                // * Проверка на ввод неотрицательных значений количества символов
+                // */
+                // while (length <= 0) {
+                // System.out.print("---> Количество символов не может быть меньше 1!\n" +
+                // "Введите количество символов: ");
+                // length = scanner.nextInt();
+                // }
 
                 System.out.print("***\nВведите максимальное количество попыток: ");
                 Integer count = scanner.nextInt();
@@ -60,7 +62,7 @@ public class Main {
                 /**
                  * Старт игры
                  */
-                numberGame.start(length, count);
+                numberGame.start(/* length, */ count);
 
                 scanner.nextLine();
                 while (!numberGame.getGameStatus().equals(GameStatus.FINISH)) {
@@ -83,7 +85,7 @@ public class Main {
                             count + " возможных \n").getBytes();
                     outputStream.write(buffer2);
                 } else {
-                    byte[] buffer2 = (numberCountGames + " игра пройдена за: " + finalTimeData + "мс. и за"
+                    byte[] buffer2 = (numberCountGames + " игра пройдена за: " + finalTimeData + "мс. и за "
                             + numberGame.currentTry
                             + " попыток, из " +
                             count + " возможных \n").getBytes();
