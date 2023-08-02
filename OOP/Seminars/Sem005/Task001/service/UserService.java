@@ -57,4 +57,14 @@ public class UserService implements DataService {
         return students;
     }
 
+    public List<User> readOnlyTeacher() {
+        List<User> teachers = new ArrayList<>();
+        for (User user : userList) {
+            if (user instanceof Teacher) {
+                teachers.add(user);
+            }
+        }
+        return teachers;
+    }
+
 }

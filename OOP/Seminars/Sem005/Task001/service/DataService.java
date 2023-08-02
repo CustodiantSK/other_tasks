@@ -11,4 +11,6 @@ public interface DataService {
     List<User> read();
 
     List<User> readOnlyStudent();
+
+    List<User> readOnlyTeacher();
 }
